@@ -842,6 +842,7 @@ const escolasData = [
 ];
 
 const gridContainer = document.getElementById('escolas-grid');
+const tabs = document.querySelectorAll('.tab-btn');
 
 function renderizarEscolas(lista) {
     gridContainer.innerHTML = '';
@@ -862,38 +863,99 @@ function renderizarEscolas(lista) {
                 <h3>${escola.nome}</h3>
                 <span class="cie-badge">CIE: ${escola.cie}</span>
             </div>
+            
             <div class="school-details-grid">
-                <div class="detail-item full-width"><strong>Tipo de Ensino</strong><span>${escola.tipoEnsino}</span></div>
-                <div class="detail-item"><strong>Turnos</strong><span>${escola.turnos}</span></div>
-                <div class="detail-item"><strong>ALE</strong><span>${escola.ale}</span></div>
-                <div class="detail-item full-width"><strong>Endereço</strong><span>${escola.endereco}, ${escola.numero}</span></div>
-                <div class="detail-item"><strong>Bairro</strong><span>${escola.bairro}</span></div>
-                <div class="detail-item"><strong>Zona</strong><span>${escola.zona}</span></div>
-                <div class="detail-item full-width"><strong>Telefone</strong><span>${escola.telefone}</span></div>
-                <div class="detail-item full-width"><strong>Email</strong><span>${escola.email}</span></div>
+                
+                <div class="detail-item full-width">
+                    <strong>Tipo de Ensino</strong>
+                    <span>${escola.tipoEnsino}</span>
+                </div>
+
+                <div class="detail-item">
+                    <strong>Turnos</strong>
+                    <span>${escola.turnos}</span>
+                </div>
+                <div class="detail-item">
+                    <strong>ALE</strong>
+                    <span>${escola.ale}</span>
+                </div>
+
+                <div class="detail-item full-width">
+                    <strong>Endereço</strong>
+                    <span>${escola.endereco}, ${escola.numero}</span>
+                </div>
+
+                <div class="detail-item">
+                    <strong>Bairro</strong>
+                    <span>${escola.bairro}</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Zona</strong>
+                    <span>${escola.zona}</span>
+                </div>
+
+                <div class="detail-item full-width">
+                    <strong>Telefone</strong>
+                    <span>${escola.telefone}</span>
+                </div>
+                
+                <div class="detail-item full-width">
+                    <strong>Email</strong>
+                    <span>${escola.email}</span>
+                </div>
             </div>
+
             <div class="card-action">
-                <a href="${linkMapa}" target="_blank" rel="noopener noreferrer" class="btn-abrir">Abrir no Mapa</a>
+                <a href="${linkMapa}" target="_blank" rel="noopener noreferrer" class="btn-abrir" style="text-decoration: none; display: inline-block; text-align: center;">
+                    Abrir no Mapa
+                </a>
             </div>
         `;
         gridContainer.appendChild(card);
     });
 }
 
+function filtrarEscolas(filtro) {
+    tabs.forEach(btn => btn.classList.remove('active'));
+
+    if (typeof event !== 'undefined') {
+        event.target.classList.add('active');
+    }
+
+    let listaFiltrada = [];
+
+    if (filtro === 'todas') {
+        listaFiltrada = [...escolasData];
+    } else {
+        listaFiltrada = escolasData.filter(escola => escola.cidade === filtro);
+    }
+
+    listaFiltrada.sort((a, b) => a.nome.localeCompare(b.nome));
+
+    renderizarEscolas(listaFiltrada);
+}
+
+// ... (mantenha o array escolasData e a função renderizarEscolas como estão)
+
+// Função para extrair opções únicas para os menus de escolha
 function configurarMenusSelecao() {
     const ensinoSelect = document.getElementById('filter-ensino');
     const turnoSelect = document.getElementById('filter-turno');
+
+    // Extrair termos únicos de Ensino e Turnos (limpando e separando por "/")
     const tiposEnsino = new Set();
     const tiposTurno = new Set();
 
     escolasData.forEach(escola => {
         escola.tipoEnsino.split('/').forEach(item => tiposEnsino.add(item.trim()));
+        // Simplificar turnos para o menu (Ex: MANHÃ, TARDE, NOITE, INTEGRAL)
         if (escola.turnos.includes('MANHÃ')) tiposTurno.add('MANHÃ');
         if (escola.turnos.includes('TARDE')) tiposTurno.add('TARDE');
         if (escola.turnos.includes('NOITE')) tiposTurno.add('NOITE');
         if (escola.turnos.includes('INTEGRAL')) tiposTurno.add('PROGRAMA INTEGRAL');
     });
 
+    // Preencher Select de Ensino
     tiposEnsino.forEach(tipo => {
         const opt = document.createElement('option');
         opt.value = tipo;
@@ -901,6 +963,7 @@ function configurarMenusSelecao() {
         ensinoSelect.appendChild(opt);
     });
 
+    // Preencher Select de Turnos
     tiposTurno.forEach(turno => {
         const opt = document.createElement('option');
         opt.value = turno;
@@ -909,6 +972,7 @@ function configurarMenusSelecao() {
     });
 }
 
+// Função principal de filtragem combinada
 function executarFiltros() {
     const nomeBusca = document.getElementById('search-name').value.toLowerCase();
     const cidadeFiltro = document.getElementById('filter-cidade').value;
@@ -924,13 +988,22 @@ function executarFiltros() {
         return matchNome && matchCidade && matchEnsino && matchTurno;
     });
 
+    // Ordenar por nome
     listaFiltrada.sort((a, b) => a.nome.localeCompare(b.nome));
 
     renderizarEscolas(listaFiltrada);
 }
+
+// Inicialização
 document.addEventListener('DOMContentLoaded', () => {
-    configurarMenusSelecao(); 
-    executarFiltros();      
+    configurarMenusSelecao();
+    executarFiltros();       
 });
 
+window.onload = () => {
 
+    const primeiraAba = document.querySelector('.tab-btn');
+    if (primeiraAba) primeiraAba.classList.add('active');
+
+    filtrarEscolas('todas');
+};
