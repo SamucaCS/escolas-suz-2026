@@ -935,27 +935,21 @@ function filtrarEscolas(filtro) {
     renderizarEscolas(listaFiltrada);
 }
 
-// ... (mantenha o array escolasData e a função renderizarEscolas como estão)
-
-// Função para extrair opções únicas para os menus de escolha
 function configurarMenusSelecao() {
     const ensinoSelect = document.getElementById('filter-ensino');
     const turnoSelect = document.getElementById('filter-turno');
 
-    // Extrair termos únicos de Ensino e Turnos (limpando e separando por "/")
     const tiposEnsino = new Set();
     const tiposTurno = new Set();
 
     escolasData.forEach(escola => {
         escola.tipoEnsino.split('/').forEach(item => tiposEnsino.add(item.trim()));
-        // Simplificar turnos para o menu (Ex: MANHÃ, TARDE, NOITE, INTEGRAL)
         if (escola.turnos.includes('MANHÃ')) tiposTurno.add('MANHÃ');
         if (escola.turnos.includes('TARDE')) tiposTurno.add('TARDE');
         if (escola.turnos.includes('NOITE')) tiposTurno.add('NOITE');
         if (escola.turnos.includes('INTEGRAL')) tiposTurno.add('PROGRAMA INTEGRAL');
     });
 
-    // Preencher Select de Ensino
     tiposEnsino.forEach(tipo => {
         const opt = document.createElement('option');
         opt.value = tipo;
@@ -972,7 +966,6 @@ function configurarMenusSelecao() {
     });
 }
 
-// Função principal de filtragem combinada
 function executarFiltros() {
     const nomeBusca = document.getElementById('search-name').value.toLowerCase();
     const cidadeFiltro = document.getElementById('filter-cidade').value;
@@ -988,13 +981,11 @@ function executarFiltros() {
         return matchNome && matchCidade && matchEnsino && matchTurno;
     });
 
-    // Ordenar por nome
     listaFiltrada.sort((a, b) => a.nome.localeCompare(b.nome));
 
     renderizarEscolas(listaFiltrada);
 }
 
-// Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao();
     executarFiltros();       
@@ -1007,3 +998,4 @@ window.onload = () => {
 
     filtrarEscolas('todas');
 };
+
