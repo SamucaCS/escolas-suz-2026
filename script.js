@@ -425,7 +425,7 @@ const escolasData = [
         cidade: "Suzano",
         tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO  / ENSINO MÉDIO PROFISSIONALIZANTE",
         turnos: " MANHÃ / TARDE / NOITE",
-        endereco: "RUA SANTA CLOTILDE,
+        endereco: "RUA SANTA CLOTILDE",
         numero: "305",
         bairro: "VILA FATIMA",
         zona: "URBANA",
@@ -957,7 +957,6 @@ function configurarMenusSelecao() {
         ensinoSelect.appendChild(opt);
     });
 
-    // Preencher Select de Turnos
     tiposTurno.forEach(turno => {
         const opt = document.createElement('option');
         opt.value = turno;
@@ -988,7 +987,7 @@ function executarFiltros() {
 
 document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao();
-    executarFiltros();       
+    executarFiltros();
 });
 
 window.onload = () => {
@@ -998,4 +997,3 @@ window.onload = () => {
 
     filtrarEscolas('todas');
 };
-
