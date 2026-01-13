@@ -28,48 +28,9 @@ header {
     gap: 15px;
 }
 
-.icon-circle {
-    width: 40px;
-    height: 40px;
-    background-color: #cdf0d6;
-    border-radius: 50%;
-}
-
 h1 {
     font-size: 1.2rem;
     font-weight: 700;
-}
-
-.btn-inicio {
-    background-color: #cdf0d6;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    color: #1b4d2e;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.btn-inicio:hover {
-    background-color: #bcebc8;
-}
-
-.welcome-card {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
-}
-
-.welcome-card h2 {
-    margin-bottom: 10px;
-}
-
-.welcome-card p {
-    color: #666;
-    line-height: 1.5;
 }
 
 .tabs-container {
@@ -145,6 +106,7 @@ h1 {
     letter-spacing: 0.5px;
     display: inline-block;
 }
+
 .school-details-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -193,9 +155,60 @@ h1 {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-abrir:hover {
     background-color: #1b4d2e;
     color: #fff;
+}
+
+/* Barra de Filtros */
+.filters-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1b4d2e;
+    text-transform: uppercase;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 10px;
+    border: 2px solid #cdf0d6;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    color: #333;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+    .filter-group {
+        min-width: 100%;
+    }
 }
