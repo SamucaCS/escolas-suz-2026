@@ -12,20 +12,44 @@
 
     <header>
         <div class="logo-area">
-            <div class="icon-circle"></div>
             <h1>Escolas Estaduais - Diretoria de Ensino</h1>
         </div>
     </header>
 
     <main>
-        <div class="tabs-container">
-            <button class="tab-btn active" onclick="filtrarEscolas('todas')">Todas as Escolas</button>
-            <button class="tab-btn" onclick="filtrarEscolas('Suzano')">Suzano</button>
-            <button class="tab-btn" onclick="filtrarEscolas('Ferraz de Vasconcelos')">Ferraz de Vasconcelos</button>
-        </div>
+        <main>
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label for="search-name">Buscar por Nome</label>
+                    <input type="text" id="search-name" placeholder="Ex: Angela Sueli..." oninput="executarFiltros()">
+                </div>
 
-        <div id="escolas-grid" class="cards-grid">
-        </div>
+                <div class="filter-group">
+                    <label for="filter-cidade">Cidade</label>
+                    <select id="filter-cidade" onchange="executarFiltros()">
+                        <option value="todas">Todas as Cidades</option>
+                        <option value="Suzano">Suzano</option>
+                        <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-ensino">Tipo de Ensino</label>
+                    <select id="filter-ensino" onchange="executarFiltros()">
+                        <option value="todos">Todos os níveis</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-turno">Turno</label>
+                    <select id="filter-turno" onchange="executarFiltros()">
+                        <option value="todos">Todos os turnos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="escolas-grid" class="cards-grid"></div>
+        </main>
     </main>
 
     <script src="script.js"></script>
