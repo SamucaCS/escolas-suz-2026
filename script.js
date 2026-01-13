@@ -424,28 +424,28 @@ const escolasData = [
         nome: "EUCLIDES IGESCA",
         cidade: "Suzano",
         tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MEDIO / ENSINO MÉDIO PROFISSIONALIZANTE",
-        turnos: "PROGRAMA INTEGRAL 7h",
-        endereco: "RUA BASILIO VALENTE DE AGUIAR",
-        numero: "019",
-        bairro: "VILA SAO JORGE",
+        turnos: " MANHÃ / TARDE / NOITE",
+        endereco: "RUA SANTA CLOTILDE,
+        numero: "305",
+        bairro: "VILA FATIMA",
         zona: "URBANA",
-        telefone: "(011) 4742-9376",
-        email: "E007161A@EDUCACAO.SP.GOV.BR",
-        ale: "NÃO"
+        telefone: "(011) 4743-9747 (011) 4742-6305 ",
+        email: "E906300@EDUCACAO.SP.GOV.BR",
+        ale: "SIM"
     },
     {
         cie: "007161",
         nome: "GERALDO JUSTINIANO DE REZENDE SILVA PROF",
         cidade: "Suzano",
         tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MEDIO",
-        turnos: "MANHÃ / TARDE / NOITE",
-        endereco: "RUA SANTA CLOTILDE",
-        numero: "305",
-        bairro: "VILA FATIMA",
+        turnos: "PROGRAMA INTEGRAL 7h",
+        endereco: "UA BASILIO VALENTE DE AGUIAR",
+        numero: "019",
+        bairro: "VILA SÃO JORGE",
         zona: "URBANA",
-        telefone: "(011) 4742-6305 / (011) 4743-9747",
-        email: "E906300A@EDUCACAO.SP.GOV.BR",
-        ale: "SIM"
+        telefone: "(011) 4742-9376 ",
+        email: "E007161a@educacao.SP.GOV.BR",
+        ale: "NÃO"
     },
     {
         cie: "352603",
@@ -932,3 +932,4 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao(); 
     executarFiltros();      
 });
+
