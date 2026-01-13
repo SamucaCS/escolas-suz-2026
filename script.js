@@ -439,7 +439,7 @@ const escolasData = [
         cidade: "Suzano",
         tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO",
         turnos: "PROGRAMA INTEGRAL 7h",
-        endereco: "UA BASILIO VALENTE DE AGUIAR",
+        endereco: "RUA BASILIO VALENTE DE AGUIAR",
         numero: "019",
         bairro: "VILA SÃO JORGE",
         zona: "URBANA",
@@ -493,7 +493,7 @@ const escolasData = [
         cie: "921087",
         nome: "JACQUES YVES COUSTEAU COMANDANTE",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / EJA FUNDAMENTAL - ANOS FINAIS / EJA FUNDAMENTAL",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / EJA FUNDAMENTAL - ANOS FINAIS",
         turnos: "MANHÃ / TARDE / NOITE",
         endereco: "RUA BENEDITO LUCAS PARREIRA",
         numero: "165",
@@ -507,7 +507,7 @@ const escolasData = [
         cie: "901891",
         nome: "JANDYRA COUTINHO PROFª",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / EJA FUNDAMENTAL - ANOS FINAIS / EJA FUNDAMENTAL",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / EJA FUNDAMENTAL - ANOS FINAIS",
         turnos: "MANHÃ / TARDE / NOITE",
         endereco: "RUA AUGUSTO SOUZA DE AQUINO",
         numero: "005",
@@ -841,10 +841,12 @@ const escolasData = [
     }
 ];
 
+// ... (mantenha o array escolasData no topo)
+
 const gridContainer = document.getElementById('escolas-grid');
-const tabs = document.querySelectorAll('.tab-btn');
 
 function renderizarEscolas(lista) {
+    if (!gridContainer) return;
     gridContainer.innerHTML = '';
 
     if (lista.length === 0) {
@@ -854,6 +856,7 @@ function renderizarEscolas(lista) {
 
     lista.forEach(escola => {
         const enderecoBusca = `${escola.endereco}, ${escola.numero} - ${escola.bairro}, ${escola.cidade}, São Paulo`;
+        // CORREÇÃO: Adicionado o $ e corrigido o formato da URL para o Google Maps
         const linkMapa = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoBusca)}`;
 
         const card = document.createElement('div');
@@ -863,48 +866,16 @@ function renderizarEscolas(lista) {
                 <h3>${escola.nome}</h3>
                 <span class="cie-badge">CIE: ${escola.cie}</span>
             </div>
-            
             <div class="school-details-grid">
-                
-                <div class="detail-item full-width">
-                    <strong>Tipo de Ensino</strong>
-                    <span>${escola.tipoEnsino}</span>
-                </div>
-
-                <div class="detail-item">
-                    <strong>Turnos</strong>
-                    <span>${escola.turnos}</span>
-                </div>
-                <div class="detail-item">
-                    <strong>ALE</strong>
-                    <span>${escola.ale}</span>
-                </div>
-
-                <div class="detail-item full-width">
-                    <strong>Endereço</strong>
-                    <span>${escola.endereco}, ${escola.numero}</span>
-                </div>
-
-                <div class="detail-item">
-                    <strong>Bairro</strong>
-                    <span>${escola.bairro}</span>
-                </div>
-                <div class="detail-item">
-                    <strong>Zona</strong>
-                    <span>${escola.zona}</span>
-                </div>
-
-                <div class="detail-item full-width">
-                    <strong>Telefone</strong>
-                    <span>${escola.telefone}</span>
-                </div>
-                
-                <div class="detail-item full-width">
-                    <strong>Email</strong>
-                    <span>${escola.email}</span>
-                </div>
+                <div class="detail-item full-width"><strong>Tipo de Ensino</strong><span>${escola.tipoEnsino}</span></div>
+                <div class="detail-item"><strong>Turnos</strong><span>${escola.turnos}</span></div>
+                <div class="detail-item"><strong>ALE</strong><span>${escola.ale}</span></div>
+                <div class="detail-item full-width"><strong>Endereço</strong><span>${escola.endereco}, ${escola.numero}</span></div>
+                <div class="detail-item"><strong>Bairro</strong><span>${escola.bairro}</span></div>
+                <div class="detail-item"><strong>Zona</strong><span>${escola.zona}</span></div>
+                <div class="detail-item full-width"><strong>Telefone</strong><span>${escola.telefone}</span></div>
+                <div class="detail-item full-width"><strong>Email</strong><span>${escola.email}</span></div>
             </div>
-
             <div class="card-action">
                 <a href="${linkMapa}" target="_blank" rel="noopener noreferrer" class="btn-abrir" style="text-decoration: none; display: inline-block; text-align: center;">
                     Abrir no Mapa
@@ -915,46 +886,35 @@ function renderizarEscolas(lista) {
     });
 }
 
-function filtrarEscolas(filtro) {
-    tabs.forEach(btn => btn.classList.remove('active'));
-
-    if (typeof event !== 'undefined') {
-        event.target.classList.add('active');
-    }
-
-    let listaFiltrada = [];
-
-    if (filtro === 'todas') {
-        listaFiltrada = [...escolasData];
-    } else {
-        listaFiltrada = escolasData.filter(escola => escola.cidade === filtro);
-    }
-
-    listaFiltrada.sort((a, b) => a.nome.localeCompare(b.nome));
-
-    renderizarEscolas(listaFiltrada);
-}
-
 function configurarMenusSelecao() {
     const ensinoSelect = document.getElementById('filter-ensino');
     const turnoSelect = document.getElementById('filter-turno');
 
-    const tiposEnsino = new Set();
-    const tiposTurno = new Set();
+    if (!ensinoSelect || !turnoSelect) return;
+    const opcoesEnsino = [
+        "ENSINO FUNDAMENTAL - ANOS INICIAIS",
+        "ENSINO FUNDAMENTAL - ANOS FINAIS",
+        "ENSINO MÉDIO",
+        "ENSINO MÉDIO PROFISSIONALIZANTE",
+        "EJA FUNDAMENTAL - ANOS FINAIS",
+        "EJA ENSINO MÉDIO",
+        "EJA - PRESENÇA FLEXÍVEL",
+        "ESTUDO DE LÍNGUAS"
+    ];
 
+    opcoesEnsino.forEach(opcao => {
+        const opt = document.createElement('option');
+        opt.value = opcao;
+        opt.textContent = opcao.toLowerCase();
+        ensinoSelect.appendChild(opt);
+    });
+
+    const tiposTurno = new Set();
     escolasData.forEach(escola => {
-        escola.tipoEnsino.split('/').forEach(item => tiposEnsino.add(item.trim()));
         if (escola.turnos.includes('MANHÃ')) tiposTurno.add('MANHÃ');
         if (escola.turnos.includes('TARDE')) tiposTurno.add('TARDE');
         if (escola.turnos.includes('NOITE')) tiposTurno.add('NOITE');
         if (escola.turnos.includes('INTEGRAL')) tiposTurno.add('PROGRAMA INTEGRAL');
-    });
-
-    tiposEnsino.forEach(tipo => {
-        const opt = document.createElement('option');
-        opt.value = tipo;
-        opt.textContent = tipo;
-        ensinoSelect.appendChild(opt);
     });
 
     tiposTurno.forEach(turno => {
@@ -966,22 +926,27 @@ function configurarMenusSelecao() {
 }
 
 function executarFiltros() {
-    const nomeBusca = document.getElementById('search-name').value.toLowerCase();
-    const cidadeFiltro = document.getElementById('filter-cidade').value;
-    const ensinoFiltro = document.getElementById('filter-ensino').value;
-    const turnoFiltro = document.getElementById('filter-turno').value;
+    const searchNameElem = document.getElementById('search-name');
+    const filterCidadeElem = document.getElementById('filter-cidade');
+    const filterEnsinoElem = document.getElementById('filter-ensino');
+    const filterTurnoElem = document.getElementById('filter-turno');
+
+    if (!searchNameElem || !filterCidadeElem || !filterEnsinoElem || !filterTurnoElem) return;
+
+    const nomeBusca = searchNameElem.value.toLowerCase();
+    const cidadeFiltro = filterCidadeElem.value;
+    const ensinoFiltro = filterEnsinoElem.value;
+    const turnoFiltro = filterTurnoElem.value;
 
     const listaFiltrada = escolasData.filter(escola => {
         const matchNome = escola.nome.toLowerCase().includes(nomeBusca);
         const matchCidade = cidadeFiltro === 'todas' || escola.cidade === cidadeFiltro;
-        const matchEnsino = ensinoFiltro === 'todos' || escola.tipoEnsino.includes(ensinoFiltro);
-        const matchTurno = turnoFiltro === 'todos' || escola.turnos.includes(turnoFiltro);
-
+        const matchEnsino = ensinoFiltro === 'todos' || escola.tipoEnsino.toUpperCase().includes(ensinoFiltro);
+        const matchTurno = turnoFiltro === 'todos' || escola.turnos.toUpperCase().includes(turnoFiltro);
         return matchNome && matchCidade && matchEnsino && matchTurno;
     });
 
     listaFiltrada.sort((a, b) => a.nome.localeCompare(b.nome));
-
     renderizarEscolas(listaFiltrada);
 }
 
@@ -989,11 +954,3 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao();
     executarFiltros();
 });
-
-window.onload = () => {
-
-    const primeiraAba = document.querySelector('.tab-btn');
-    if (primeiraAba) primeiraAba.classList.add('active');
-
-    filtrarEscolas('todas');
-};
