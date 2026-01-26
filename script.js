@@ -1,5 +1,4 @@
-const escolasData = [
-    {
+const escolasData = [{
         cie: "922109",
         nome: "ANGELA SUELI PONTES DIAS PROFª",
         cidade: "Ferraz de Vasconcelos",
@@ -392,6 +391,21 @@ const escolasData = [
         ale: "NÃO"
     },
     {
+        cie: "007067",
+        nome: "CARLOS MOLTENI PROF",
+        cidade: "Suzano",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO MÉDIO / ENSINO MÉDIO PROFISSIONALIZANTE",
+        turnos: "PROGRAMA INTEGRAL 9H",
+        endereco: " RUA TEREZA CLEMENTINA THOMAZINI DE FREITAS",
+        numero: "105",
+        bairro: "PARQUE MARIA HELENA",
+        zona: "URBANA",
+        telefone: "(011) 4647-2200",
+        email: "E007067A@EDUCACAO.SP.GOV.BR",
+        ale: "NÃO"
+    },
+
+    {
         cie: "046197",
         nome: "CHOJIRO SEGAWA",
         cidade: "Suzano",
@@ -526,6 +540,20 @@ const escolasData = [
         endereco: "RUA PAULO ERNANI BRAGA DO NASCIMENTO",
         numero: "061",
         bairro: "JARDIM SAO JOSE",
+        zona: "URBANA",
+        telefone: "(011) 4742-6914",
+        email: "E921518A@EDUCACAO.SP.GOV.BR",
+        ale: "SIM"
+    },
+    {
+        cie: "921518A",
+        nome: "JOSE CAMILO DE ANDRADE",
+        cidade: "Suzano",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO ",
+        turnos: "MANHÃ / TARDE ",
+        endereco: "RUA JOSE DIAS SOUZA ",
+        numero: "090",
+        bairro: "JARDIM BRASIL",
         zona: "URBANA",
         telefone: "(011) 4742-6914",
         email: "E921518A@EDUCACAO.SP.GOV.BR",
@@ -841,8 +869,6 @@ const escolasData = [
     }
 ];
 
-// ... (mantenha o array escolasData no topo)
-
 const gridContainer = document.getElementById('escolas-grid');
 
 function renderizarEscolas(lista) {
@@ -856,7 +882,6 @@ function renderizarEscolas(lista) {
 
     lista.forEach(escola => {
         const enderecoBusca = `${escola.endereco}, ${escola.numero} - ${escola.bairro}, ${escola.cidade}, São Paulo`;
-        // CORREÇÃO: Adicionado o $ e corrigido o formato da URL para o Google Maps
         const linkMapa = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoBusca)}`;
 
         const card = document.createElement('div');
