@@ -528,7 +528,7 @@ const escolasData = [
         bairro: "JARDIM SAO JOSE",
         zona: "URBANA",
         telefone: "(011) 4742-6914",
-        email: "E921518A@EDUCACAO.SP.GOV.BR",
+        email: "E908472A@EDUCACAO.SP.GOV.BR",
         ale: "SIM"
     },
     {
