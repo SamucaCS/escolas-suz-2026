@@ -531,6 +531,21 @@ const escolasData = [
         email: "E908472A@EDUCACAO.SP.GOV.BR",
         ale: "SIM"
     },
+{
+        cie: "921518A",
+        nome: "JOSE CAMILO DE ANDRADE",
+        cidade: "Suzano",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO,
+        turnos: "MANHÃ / TARDE",
+        endereco: "RUA JOSE DIAS SOUZA",
+        numero: "090",
+        bairro: "JARDIM BRASIL",
+        zona: "URBANA",
+        telefone: "(011) 4742-6914",
+        email: "E921518A@EDUCACAO.SP.GOV.BR",
+        ale: "SIM"
+    },
+    
     {
         cie: "906281",
         nome: "JOSE PAPAIZ PROF",
@@ -954,3 +969,4 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao();
     executarFiltros();
 });
+
