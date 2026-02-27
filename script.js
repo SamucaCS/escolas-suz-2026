@@ -542,7 +542,7 @@ const escolasData = [
         bairro: "JARDIM BRASIL",
         zona: "URBANA",
         telefone: "(011) 4742-6914",
-        email: "E921518A@EDUCACAO.SP.GOV.BR",
+        email: "E921518a@EDUCACAO.SP.GOV.BR",
         ale: "SIM"
     },
     
@@ -969,4 +969,5 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao();
     executarFiltros();
 });
+
 
