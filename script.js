@@ -535,7 +535,7 @@ const escolasData = [
         cie: "921518A",
         nome: "JOSE CAMILO DE ANDRADE",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO,
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO",
         turnos: "MANHÃ / TARDE",
         endereco: "RUA JOSE DIAS SOUZA",
         numero: "090",
@@ -969,5 +969,6 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao();
     executarFiltros();
 });
+
 
 
