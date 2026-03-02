@@ -411,14 +411,14 @@ const escolasData = [
         nome: "CARLOS MOLTENI PROF",
         cidade: "Suzano",
         tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / ENSINO MÉDIO PROFISSIONALIZANTE",
-        turnos: "MANHÃ / TARDE / NOITE",
-        endereco: "RODOVIA INDIO TIBIRICA",
-        numero: "13114",
-        bairro: "PALMEIRAS DE SAO PAULO",
+        turnos: "PROGRAMA INTEGRAL 9H",
+        endereco: "RUA TEREZA CLEMENTINA THOMAZINI DE FREITAS",
+        numero: "105",
+        bairro: "PARQUE MARIA HELENA",
         zona: "URBANA",
-        telefone: "(011) 4742-6707",
-        email: "E046197A@EDUCACAO.SP.GOV.BR",
-        ale: "SIM"
+        telefone: "(011) 4746-2200",
+        email: "E007067A@EDUCACAO.SP.GOV.BR",
+        ale: "NÃO"
     },
 
     {
@@ -999,6 +999,7 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao();
     executarFiltros();
 });
+
 
 
 
