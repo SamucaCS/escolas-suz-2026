@@ -153,7 +153,7 @@ const escolasData = [
         email: "E007237A@EDUCACAO.SP.GOV.BR",
         ale: "SIM"
     },
-{
+    {
         cie: "035506",
         nome: "MARIO MANOEL DANTAS DE AQUINO PROF",
         cidade: "Ferraz de Vasconcelos",
@@ -407,6 +407,21 @@ const escolasData = [
         ale: "NÃO"
     },
     {
+        cie: "007067",
+        nome: "CARLOS MOLTENI PROF",
+        cidade: "Suzano",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / ENSINO MÉDIO PROFISSIONALIZANTE",
+        turnos: "MANHÃ / TARDE / NOITE",
+        endereco: "RODOVIA INDIO TIBIRICA",
+        numero: "13114",
+        bairro: "PALMEIRAS DE SAO PAULO",
+        zona: "URBANA",
+        telefone: "(011) 4742-6707",
+        email: "E046197A@EDUCACAO.SP.GOV.BR",
+        ale: "SIM"
+    },
+
+    {
         cie: "046197",
         nome: "CHOJIRO SEGAWA",
         cidade: "Suzano",
@@ -546,7 +561,7 @@ const escolasData = [
         email: "E908472A@EDUCACAO.SP.GOV.BR",
         ale: "SIM"
     },
-{
+    {
         cie: "921518A",
         nome: "JOSE CAMILO DE ANDRADE",
         cidade: "Suzano",
@@ -560,7 +575,7 @@ const escolasData = [
         email: "E921518a@EDUCACAO.SP.GOV.BR",
         ale: "SIM"
     },
-    
+
     {
         cie: "906281",
         nome: "JOSE PAPAIZ PROF",
