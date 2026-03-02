@@ -153,6 +153,21 @@ const escolasData = [
         email: "E007237A@EDUCACAO.SP.GOV.BR",
         ale: "SIM"
     },
+{
+        cie: "035506",
+        nome: "MARIO MANOEL DANTAS DE AQUINO PROF",
+        cidade: "Ferraz de Vasconcelos",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / ENSINO MÉDIO PROFISSIONALIZANTE",
+        turnos: "PROGRAMA INTEGRAL 7H",
+        endereco: "RUA DAVID DE ROGATIS",
+        numero: "310",
+        bairro: "PARQUE DOURADO",
+        zona: "URBANA",
+        telefone: " (011) 4678-1264",
+        email: "E035506A@EDUCACAO.SP.GOV.BR",
+        ale: "SIM"
+    },
+
     {
         cie: "906311",
         nome: "MARTHA CALIXTO CAZAGRANDE",
