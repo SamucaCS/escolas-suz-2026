@@ -453,7 +453,7 @@ const escolasData = [
         cie: "906300",
         nome: "EUCLIDES IGESCA",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / NSINO FUNDAMENTAL - ANOS FINAIS  / ENSINO MÉDIO PROFISSIONALIZANTE",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / NSINO FUNDAMENTAL - ANOS FINAIS  / ENSINO MÉDIO",
         turnos: " MANHÃ / TARDE / NOITE",
         endereco: "RUA SANTA CLOTILDE",
         numero: "305",
@@ -523,7 +523,7 @@ const escolasData = [
         cie: "921087",
         nome: "JACQUES YVES COUSTEAU COMANDANTE",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / EJA FUNDAMENTAL - ANOS FINAIS",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / EJA FUNDAMENTAL - Médio",
         turnos: "MANHÃ / TARDE / NOITE",
         endereco: "RUA BENEDITO LUCAS PARREIRA",
         numero: "165",
@@ -901,7 +901,6 @@ function renderizarEscolas(lista) {
 
     lista.forEach(escola => {
         const enderecoBusca = `${escola.endereco}, ${escola.numero} - ${escola.bairro}, ${escola.cidade}, São Paulo`;
-        // CORREÇÃO: Adicionado o $ e corrigido o formato da URL para o Google Maps
         const linkMapa = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoBusca)}`;
 
         const card = document.createElement('div');
