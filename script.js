@@ -73,7 +73,7 @@ const escolasData = [
         cie: "007262",
         nome: "IGNES CORREA ALLEN PROF",
         cidade: "Ferraz de Vasconcelos",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / ENSINO MÉDIO PROFISSIONALIZANTE",
         turnos: "MANHÃ / TARDE",
         endereco: "RUA SAO FRANCISCO",
         numero: "128",
@@ -383,7 +383,7 @@ const escolasData = [
         nome: "BENEDITA DE CAMPOS MARCOLONGO PROFª",
         cidade: "Suzano",
         tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO FUNDAMENTAL - ANOS INICIAIS",
-        turnos: "TARDE / NOITE",
+        turnos: "MANHÃ / TARDE",
         endereco: "RUA ESTER BOROS",
         numero: "300",
         bairro: "JARDIM VITORIA",
@@ -397,7 +397,7 @@ const escolasData = [
         nome: "BRASILIO MACHADO NETO COMENDADOR",
         cidade: "Suzano",
         tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS",
-        turnos: "MANHÃ / NOITE",
+        turnos: "MANHÃ / TARDE",
         endereco: "RUA AGNALDO CURSINO",
         numero: "367",
         bairro: "SESC",
@@ -523,7 +523,7 @@ const escolasData = [
         cie: "921087",
         nome: "JACQUES YVES COUSTEAU COMANDANTE",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / EJA FUNDAMENTAL - Médio",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / EJA FUNDAMENTAL - ENSINO MÉDIO",
         turnos: "MANHÃ / TARDE / NOITE",
         endereco: "RUA BENEDITO LUCAS PARREIRA",
         numero: "165",
@@ -693,7 +693,7 @@ const escolasData = [
         nome: "MARIA ELISA DE AZEVEDO CINTRA PROFª",
         cidade: "Suzano",
         tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO",
-        turnos: "MANHÃ / TARDE",
+        turnos: "MANHÃ / TARDE / NOITE",
         endereco: "RUA PRESBITERO BENEDITO DE OLIVEIRA",
         numero: "061",
         bairro: "JARDIM DONA BENTA",
@@ -776,7 +776,7 @@ const escolasData = [
         cie: "006981",
         nome: "RAUL BRASIL PROF",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO MÉDIO",
+        tipoEnsino: "ENSINO MÉDIO / ENSINO MÉDIO PROFISSIONALIZANTE ",
         turnos: "PROGRAMA INTEGRAL 9h",
         endereco: "RUA JOSE GARCIA DE SOUZA",
         numero: "251",
@@ -804,7 +804,7 @@ const escolasData = [
         cie: "006993",
         nome: "ROBERTO BIANCHI",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / ENSINO MÉDIO PROFISSIONALIZANTE",
         turnos: "MANHÃ / TARDE",
         endereco: "RUA KEIDA HARADA ESTRADA",
         numero: "099",
@@ -818,7 +818,7 @@ const escolasData = [
         cie: "040514",
         nome: "SEBASTIAO PEREIRA VIDAL",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / ENSINO MÉDIO PROFISSIONALIZANTE",
         turnos: "PROGRAMA INTEGRAL 7H",
         endereco: "RUA BRASILIA AVENIDA",
         numero: "1020",
@@ -998,7 +998,6 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao();
     executarFiltros();
 });
-
 
 
 
