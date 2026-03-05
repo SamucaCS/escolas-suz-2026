@@ -523,7 +523,7 @@ const escolasData = [
         cie: "921087",
         nome: "JACQUES YVES COUSTEAU COMANDANTE",
         cidade: "Suzano",
-        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / EJA - ENSINO MÉDIO",
+        tipoEnsino: "ENSINO FUNDAMENTAL - ANOS INICIAIS / ENSINO FUNDAMENTAL - ANOS FINAIS / ENSINO MÉDIO / EJA ENSINO MÉDIO",
         turnos: "MANHÃ / TARDE / NOITE",
         endereco: "RUA BENEDITO LUCAS PARREIRA",
         numero: "165",
@@ -998,6 +998,7 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenusSelecao();
     executarFiltros();
 });
+
 
 
 
