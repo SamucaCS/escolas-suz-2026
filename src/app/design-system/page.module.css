@@ -1,0 +1,224 @@
+.intro {
+  border-bottom: var(--border-width) solid var(--color-border);
+  background: var(--color-bg-subtle);
+}
+
+.introInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding-block: var(--space-10);
+}
+
+.introInner h1 {
+  max-width: 20ch;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.introInner > p {
+  max-width: 60ch;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-4);
+  list-style: none;
+}
+
+.principles li > * {
+  height: 100%;
+}
+
+.principleTitle {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-black);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding-block: var(--space-10) var(--space-16);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  scroll-margin-top: 84px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sectionHeader h2 {
+  font-size: var(--font-size-2xl);
+}
+
+.sectionHeader p {
+  max-width: 70ch;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-bold);
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.code {
+  overflow-x: auto;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-subtle);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-3);
+}
+
+.muted {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-bold);
+}
+
+.subheading {
+  font-size: var(--font-size-md);
+}
+
+/* ---------- Cores ---------- */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: var(--space-6) var(--space-4);
+  list-style: none;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+}
+
+.swatch code {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.swatchColor {
+  height: 64px;
+  margin-bottom: calc(var(--space-2) + 4px);
+  border-radius: var(--radius-lg);
+}
+
+.swatchSoft {
+  display: flex;
+  margin-bottom: var(--space-1);
+}
+
+.swatchSoft span {
+  flex: 1;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-black);
+}
+
+.neutrals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.neutrals li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-1);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+}
+
+.neutrals li span {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  box-shadow: inset 0 0 0 1px var(--color-border-strong);
+}
+
+/* ---------- Tipografia ---------- */
+.typeScale {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  list-style: none;
+}
+
+.typeScale li {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: baseline;
+  gap: var(--space-4);
+  color: var(--color-text-strong);
+  line-height: var(--line-height-tight);
+}
+
+.typeScale code {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+@media (max-width: 560px) {
+  .typeScale li {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}
+
+/* ---------- Formulário e cards ---------- */
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--space-5);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  align-items: start;
+  gap: var(--space-4);
+}
+
+.cardTitle {
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-md);
+}

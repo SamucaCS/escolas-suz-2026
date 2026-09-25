@@ -1,0 +1,111 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-black);
+  overflow-wrap: anywhere;
+}
+
+.cie {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-caps);
+}
+
+.niveis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+.niveis li {
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  align-items: start;
+  gap: var(--space-3);
+}
+
+.row dt {
+  display: flex;
+  color: var(--color-text-muted);
+}
+
+.row dt svg {
+  width: 22px;
+  height: 22px;
+}
+
+.row dd {
+  min-width: 0;
+  color: var(--color-text-strong);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+}
+
+.secondary {
+  display: block;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-bold);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-4);
+}
+
+.row a {
+  color: var(--color-secondary-text);
+  text-decoration: none;
+}
+
+.row a:hover {
+  text-decoration: underline;
+}
+
+.email {
+  overflow-wrap: anywhere;
+}
+
+.action {
+  margin-top: auto;
+  margin-bottom: var(--press-depth);
+}

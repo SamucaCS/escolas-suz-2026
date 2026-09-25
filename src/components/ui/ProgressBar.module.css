@@ -1,0 +1,48 @@
+.track {
+  --bar-color: var(--color-primary);
+
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+}
+
+.fill {
+  position: relative;
+  width: var(--percent);
+  /* sempre mostra a "pontinha" arredondada, mesmo com valores baixos */
+  min-width: 16px;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--bar-color);
+  transition: width 400ms var(--ease-out);
+}
+
+/* faixa de brilho na parte de cima */
+.fill::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  left: 8px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: rgb(255 255 255 / 0.3);
+}
+
+.green {
+  --bar-color: var(--color-primary);
+}
+
+.blue {
+  --bar-color: var(--color-secondary);
+}
+
+.yellow {
+  --bar-color: var(--color-warning);
+}
+
+.orange {
+  --bar-color: var(--color-orange);
+}

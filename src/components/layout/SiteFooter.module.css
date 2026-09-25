@@ -1,0 +1,25 @@
+.footer {
+  margin-top: auto;
+  border-top: var(--border-width) solid var(--color-border);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-8);
+}
+
+.inner strong {
+  color: var(--color-text-strong);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.note {
+  max-width: 36ch;
+}

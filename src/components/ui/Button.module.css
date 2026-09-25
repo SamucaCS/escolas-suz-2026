@@ -1,0 +1,129 @@
+.button {
+  --btn-bg: var(--color-primary);
+  --btn-shadow: var(--color-primary-shadow);
+  --btn-text: var(--color-on-primary);
+  --btn-border: transparent;
+  --btn-depth: var(--press-depth);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 46px;
+  padding: var(--space-2) var(--space-6);
+  border: var(--border-width) solid var(--btn-border);
+  border-radius: var(--radius-lg);
+  background: var(--btn-bg);
+  box-shadow: 0 var(--btn-depth) 0 var(--btn-shadow);
+  color: var(--btn-text);
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-caps);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    filter var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.button:hover {
+  filter: brightness(1.08);
+}
+
+/* O botão "afunda" até a sombra quando é pressionado. */
+.button:active {
+  transform: translateY(var(--btn-depth));
+  box-shadow: 0 0 0 var(--btn-shadow);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  --btn-bg: var(--color-border);
+  --btn-shadow: transparent;
+  --btn-text: var(--color-text-placeholder);
+  --btn-border: transparent;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+}
+
+/* ---------- Variantes ---------- */
+.primary {
+  /* padrão */
+}
+
+.secondary {
+  --btn-bg: var(--color-secondary);
+  --btn-shadow: var(--color-secondary-shadow);
+  --btn-text: var(--color-on-secondary);
+}
+
+.danger {
+  --btn-bg: var(--color-danger);
+  --btn-shadow: var(--color-danger-shadow);
+  --btn-text: var(--color-on-danger);
+}
+
+.warning {
+  --btn-bg: var(--color-warning);
+  --btn-shadow: var(--color-warning-shadow);
+  --btn-text: var(--color-on-warning);
+}
+
+/* Botão branco com borda — o "secundário discreto" do Duolingo. */
+.neutral {
+  --btn-bg: var(--color-surface);
+  --btn-shadow: var(--color-border);
+  --btn-text: var(--color-secondary-text);
+  --btn-border: var(--color-border);
+}
+
+.neutral:hover {
+  filter: none;
+  --btn-bg: var(--color-bg-subtle);
+}
+
+.ghost {
+  --btn-bg: transparent;
+  --btn-shadow: transparent;
+  --btn-text: var(--color-secondary-text);
+  --btn-depth: 0px;
+}
+
+.ghost:hover {
+  filter: none;
+  --btn-bg: var(--color-secondary-soft);
+}
+
+/* ---------- Tamanhos ---------- */
+.sm {
+  --btn-depth: 3px;
+  min-height: 36px;
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+}
+
+.ghost.sm {
+  --btn-depth: 0px;
+}
+
+.md {
+  /* padrão */
+}
+
+.lg {
+  min-height: 54px;
+  padding: var(--space-3) var(--space-8);
+  font-size: var(--font-size-md);
+}
+
+.fullWidth {
+  width: 100%;
+}

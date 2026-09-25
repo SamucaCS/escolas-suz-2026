@@ -1,0 +1,99 @@
+.stat {
+  --stat-color: var(--color-primary);
+  --stat-soft: var(--color-primary-soft);
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--stat-soft);
+  color: var(--stat-color);
+}
+
+.icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.value {
+  color: var(--color-text-strong);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-black);
+  line-height: 1.1;
+}
+
+.label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+}
+
+.green {
+  --stat-color: var(--color-primary);
+  --stat-soft: var(--color-primary-soft);
+}
+
+.blue {
+  --stat-color: var(--color-secondary);
+  --stat-soft: var(--color-secondary-soft);
+}
+
+.red {
+  --stat-color: var(--color-danger);
+  --stat-soft: var(--color-danger-soft);
+}
+
+.yellow {
+  --stat-color: var(--color-warning-shadow);
+  --stat-soft: var(--color-warning-soft);
+}
+
+.orange {
+  --stat-color: var(--color-orange);
+  --stat-soft: var(--color-orange-soft);
+}
+
+.purple {
+  --stat-color: var(--color-purple);
+  --stat-soft: var(--color-purple-soft);
+}
+
+.neutral {
+  --stat-color: var(--color-text-muted);
+  --stat-soft: var(--color-bg-subtle);
+}
+
+/* Em telas estreitas o ícone sobe e o texto ganha a largura toda. */
+@media (max-width: 420px) {
+  .stat {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-3);
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+}

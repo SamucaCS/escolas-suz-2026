@@ -1,0 +1,114 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: var(--border-width) solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 68px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  text-decoration: none;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  box-shadow: 0 3px 0 var(--color-primary-shadow);
+  color: var(--color-on-primary);
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.tagline {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-caps);
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-1);
+  list-style: none;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-caps);
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.navLink:hover {
+  background: var(--color-bg-subtle);
+}
+
+/* Item ativo com contorno azul, como o menu lateral do Duolingo. */
+.navLink[aria-current="page"] {
+  border-color: var(--color-secondary);
+  background: var(--color-secondary-soft);
+  color: var(--color-secondary-text);
+}
+
+@media (max-width: 640px) {
+  .tagline {
+    display: none;
+  }
+
+  .navLink span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .navLink {
+    padding: var(--space-2);
+  }
+}
