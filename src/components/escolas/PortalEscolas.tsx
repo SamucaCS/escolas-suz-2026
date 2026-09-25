@@ -18,6 +18,7 @@ import {
   NIVEIS_ENSINO,
   ROTULO_NIVEL,
   TURNOS,
+  ehCel,
   filtrarEscolas,
   type Escola,
   type Filtros,
@@ -34,9 +35,12 @@ export function PortalEscolas({ escolas }: { escolas: Escola[] }) {
     [escolas, filtros],
   );
 
-  // Contagem de cada cidade considerando os demais filtros ativos.
+  // Escolas de cada cidade considerando os demais filtros ativos (sem o CEL).
   const contagemCidade = useMemo(() => {
-    const semCidade = filtrarEscolas(escolas, { ...filtros, cidade: "todas" });
+    const semCidade = filtrarEscolas(escolas, {
+      ...filtros,
+      cidade: "todas",
+    }).filter((e) => !ehCel(e));
     return {
       todas: semCidade.length,
       ...Object.fromEntries(
@@ -47,6 +51,14 @@ export function PortalEscolas({ escolas }: { escolas: Escola[] }) {
       ),
     } as Record<Filtros["cidade"], number>;
   }, [escolas, filtros]);
+
+  // O CEL aparece na lista, mas é contado separado das escolas.
+  const totalEscolas = useMemo(
+    () => escolas.filter((e) => !ehCel(e)).length,
+    [escolas],
+  );
+  const celsNoResultado = resultado.filter(ehCel).length;
+  const escolasNoResultado = resultado.length - celsNoResultado;
 
   const temFiltroAtivo =
     filtros.busca !== "" ||
@@ -129,8 +141,18 @@ export function PortalEscolas({ escolas }: { escolas: Escola[] }) {
         <div className={styles.summaryText}>
           <h2 className={styles.title}>Escolas</h2>
           <p aria-live="polite" className={styles.count}>
-            Mostrando <strong>{resultado.length}</strong> de {escolas.length}{" "}
-            escolas
+            Mostrando{" "}
+            {(escolasNoResultado > 0 || celsNoResultado === 0) && (
+              <>
+                <strong>{escolasNoResultado}</strong> de {totalEscolas} escolas
+              </>
+            )}
+            {escolasNoResultado > 0 && celsNoResultado > 0 && " + "}
+            {celsNoResultado > 0 && (
+              <>
+                <strong>{celsNoResultado}</strong> CEL
+              </>
+            )}
           </p>
         </div>
         {temFiltroAtivo && (

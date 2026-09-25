@@ -324,7 +324,7 @@ export default function DesignSystemPage() {
           id="cards"
           titulo="Cards e estatísticas"
           descricao="Superfícies com borda de 2px e cantos de 16px. Use raised para cards clicáveis ou em destaque."
-          codigo={`<Card raised>…</Card>\n<Stat tone="blue" icon={<MapPin />} value={46} label="escolas em Suzano" />`}
+          codigo={`<Card raised>…</Card>\n<Stat tone="blue" icon={<MapPin />} value={45} label="escolas em Suzano" />`}
         >
           <div className={styles.cardGrid}>
             <Card>
@@ -338,7 +338,7 @@ export default function DesignSystemPage() {
             <Stat
               tone="blue"
               icon={<MapPin strokeWidth={2.5} />}
-              value={46}
+              value={45}
               label="escolas em Suzano"
             />
             <Stat

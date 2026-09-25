@@ -72,6 +72,8 @@ Os níveis de ensino aceitos estão em `NIVEIS_ENSINO` (`src/lib/escolas.ts`). S
 
 O filtro de turno procura as palavras `MANHÃ`, `TARDE`, `NOITE` e `INTEGRAL` dentro do campo `turnos`.
 
+São **62 escolas + 1 CEL** (Centro de Estudos de Línguas junto à EE Raul Brasil). O CEL aparece na lista, mas não entra na contagem de escolas. Ele é identificado pelo nível `"ESTUDO DE LÍNGUAS"` (função `ehCel` em `src/lib/escolas.ts`).
+
 ## Design system
 
 Veja todos os componentes funcionando em **`/design-system`**.

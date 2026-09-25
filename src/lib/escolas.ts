@@ -80,6 +80,14 @@ export function ehIntegral(escola: Escola) {
   return temTurno(escola, "INTEGRAL");
 }
 
+/**
+ * CEL (Centro de Estudos de Línguas): funciona junto a uma escola e aparece na
+ * lista, mas não entra na contagem de escolas.
+ */
+export function ehCel(escola: Escola) {
+  return escola.tipoEnsino.includes("ESTUDO DE LÍNGUAS");
+}
+
 export function filtrarEscolas(escolas: Escola[], filtros: Filtros) {
   const busca = normalizar(filtros.busca);
 

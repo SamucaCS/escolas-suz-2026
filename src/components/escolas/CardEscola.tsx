@@ -1,7 +1,17 @@
-import { Clock, Coins, Mail, MapPin, Phone, Sparkles, Trees } from "lucide-react";
+import {
+  Clock,
+  Coins,
+  Languages,
+  Mail,
+  MapPin,
+  Phone,
+  Sparkles,
+  Trees,
+} from "lucide-react";
 import { Badge, ButtonLink, Card } from "@/components/ui";
 import {
   ROTULO_NIVEL,
+  ehCel,
   ehIntegral,
   linkMapa,
   niveisOrdenados,
@@ -22,6 +32,11 @@ export function CardEscola({ escola }: { escola: Escola }) {
         <Badge tone={escola.cidade === "Suzano" ? "blue" : "purple"}>
           {escola.cidade}
         </Badge>
+        {ehCel(escola) && (
+          <Badge tone="yellow" icon={<Languages aria-hidden="true" />}>
+            Centro de Línguas
+          </Badge>
+        )}
         {ehIntegral(escola) && (
           <Badge tone="orange" icon={<Sparkles aria-hidden="true" />}>
             Integral

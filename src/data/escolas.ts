@@ -6,6 +6,9 @@ import type { Escola } from "@/lib/escolas";
  * Para adicionar ou editar uma escola, basta alterar os objetos abaixo.
  * O TypeScript avisa se algum campo estiver faltando ou se um nível de ensino
  * for digitado diferente dos valores aceitos em `NIVEIS_ENSINO` (src/lib/escolas.ts).
+ *
+ * São 62 escolas + 1 CEL (Centro de Estudos de Línguas junto à EE Raul Brasil).
+ * O CEL é identificado pelo nível "ESTUDO DE LÍNGUAS" e não entra na contagem de escolas.
  */
 export const escolas: Escola[] = [
   {

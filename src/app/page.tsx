@@ -2,15 +2,20 @@ import { ArrowDown, Coins, MapPin, School, Sparkles } from "lucide-react";
 import { PortalEscolas } from "@/components/escolas/PortalEscolas";
 import { Badge, ButtonLink, Container, Stat } from "@/components/ui";
 import { escolas } from "@/data/escolas";
-import { ehIntegral } from "@/lib/escolas";
+import { ehCel, ehIntegral } from "@/lib/escolas";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const total = escolas.length;
-  const suzano = escolas.filter((e) => e.cidade === "Suzano").length;
-  const ferraz = escolas.filter((e) => e.cidade === "Ferraz de Vasconcelos").length;
-  const integrais = escolas.filter(ehIntegral).length;
-  const comAle = escolas.filter((e) => e.ale === "SIM").length;
+  // O CEL aparece na lista, mas não é contado como escola.
+  const somenteEscolas = escolas.filter((e) => !ehCel(e));
+  const temCel = somenteEscolas.length < escolas.length;
+  const total = somenteEscolas.length;
+  const suzano = somenteEscolas.filter((e) => e.cidade === "Suzano").length;
+  const ferraz = somenteEscolas.filter(
+    (e) => e.cidade === "Ferraz de Vasconcelos",
+  ).length;
+  const integrais = somenteEscolas.filter(ehIntegral).length;
+  const comAle = somenteEscolas.filter((e) => e.ale === "SIM").length;
 
   return (
     <>
@@ -22,9 +27,9 @@ export default function Home() {
               Encontre a escola certa para <span>você</span>
             </h1>
             <p className={styles.heroLead}>
-              Todas as {total} escolas estaduais de Suzano e Ferraz de
-              Vasconcelos em um só lugar: níveis de ensino, turnos, endereço e
-              contatos.
+              As {total} escolas estaduais de Suzano e Ferraz de Vasconcelos
+              {temCel && ", mais o Centro de Estudos de Línguas (CEL),"} em um
+              só lugar: níveis de ensino, turnos, endereço e contatos.
             </p>
             <ButtonLink
               href="#escolas"
