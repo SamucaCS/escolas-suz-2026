@@ -1,4 +1,5 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
 import { cx } from "@/lib/cx";
 import styles from "./Button.module.css";
 
@@ -60,7 +61,10 @@ export function Button({
 export type ButtonLinkProps = BaseProps &
   AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
-/** Link com a aparência de botão (ex.: "Abrir no mapa"). */
+/**
+ * Link com a aparência de botão (ex.: "Abrir no mapa").
+ * Links internos ("/pagina") usam o `Link` do Next, que aplica o basePath do GitHub Pages.
+ */
 export function ButtonLink({
   variant,
   size,
@@ -68,13 +72,22 @@ export function ButtonLink({
   icon,
   className,
   children,
+  href,
   ...props
 }: ButtonLinkProps) {
+  const classes = buttonClassName({ variant, size, fullWidth }, className);
+
+  if (href.startsWith("/")) {
+    return (
+      <Link href={href} className={classes} {...props}>
+        {icon}
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <a
-      className={buttonClassName({ variant, size, fullWidth }, className)}
-      {...props}
-    >
+    <a href={href} className={classes} {...props}>
       {icon}
       {children}
     </a>
