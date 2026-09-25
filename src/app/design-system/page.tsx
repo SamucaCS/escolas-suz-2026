@@ -134,8 +134,7 @@ export default function DesignSystemPage() {
           <p>
             Tokens e componentes em React inspirados na linguagem visual do
             Duolingo. Tudo fica em <code>src/components/ui</code> e{" "}
-            <code>src/styles/tokens.css</code>. O tema escuro acompanha a
-            preferência do sistema.
+            <code>src/styles/tokens.css</code>.
           </p>
           <ul className={styles.principles}>
             {PRINCIPIOS.map(({ icon: Icon, tone, titulo, texto }) => (

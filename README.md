@@ -84,11 +84,11 @@ Princípios (inspirados no Duolingo):
 - **Profundidade 3D**: botões, chips e cards em destaque têm uma borda inferior sólida (`--press-depth`) que "afunda" ao clicar.
 - **Fonte redonda e pesada**: [Nunito](https://fonts.google.com/specimen/Nunito) em pesos 700 a 900.
 - **Cantos arredondados**: 12 a 16px nos componentes e pílulas nos badges.
-- **Tema escuro automático** seguindo a preferência do sistema.
+- **Só tema claro**: o site não tem modo escuro.
 
 ### Tokens
 
-Tudo é definido como variáveis CSS em [`src/styles/tokens.css`](src/styles/tokens.css). Os componentes usam só os **tokens semânticos**, então trocar uma cor ou ajustar o tema escuro é feito em um lugar só:
+Tudo é definido como variáveis CSS em [`src/styles/tokens.css`](src/styles/tokens.css). Os componentes usam só os **tokens semânticos**, então trocar uma cor é feito em um lugar só:
 
 ```css
 .meuBotao {

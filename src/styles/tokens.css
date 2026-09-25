@@ -4,10 +4,13 @@
  * e botões "3D" (sombra sólida embaixo que some quando o botão é pressionado).
  *
  * Componentes devem usar apenas os tokens semânticos (--color-*, --space-*...),
- * nunca as cores primitivas diretamente. Assim o tema escuro funciona sozinho.
+ * nunca as cores primitivas diretamente. Assim uma cor muda em um lugar só.
  */
 
 :root {
+  /* O site tem apenas o tema claro. */
+  color-scheme: light;
+
   /* ---------- Cores primitivas ---------- */
   --green-100: #d7ffb8;
   --green-300: #93d333;
@@ -55,14 +58,6 @@
   --gray-700: #4b4b4b;
   --gray-800: #3c3c3c;
 
-  --night-900: #131f24;
-  --night-800: #1b2b32;
-  --night-700: #202f36;
-  --night-600: #37464f;
-  --night-500: #52656d;
-  --night-300: #8fa3ad;
-  --night-100: #dce6ec;
-  --night-50: #f1f7fb;
 
   /* ---------- Cores semânticas (tema claro) ---------- */
   --color-bg: var(--gray-0);
@@ -167,61 +162,4 @@
   --duration-fast: 100ms;
   --duration-normal: 200ms;
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-
-    --color-bg: var(--night-900);
-    --color-bg-subtle: var(--night-800);
-    --color-surface: var(--night-900);
-    --color-border: var(--night-600);
-    --color-border-strong: var(--night-500);
-
-    --color-text: var(--night-100);
-    --color-text-strong: var(--night-50);
-    --color-text-muted: var(--night-300);
-    --color-text-placeholder: var(--night-500);
-
-    /* No escuro os botões ficam mais claros e o texto sobre eles fica escuro. */
-    --color-primary: var(--green-300);
-    --color-primary-shadow: #79b933;
-    --color-primary-soft: rgb(147 211 51 / 0.14);
-    --color-primary-text: var(--green-300);
-    --color-on-primary: var(--night-900);
-
-    --color-secondary: var(--blue-300);
-    --color-secondary-shadow: var(--blue-600);
-    --color-secondary-soft: rgb(73 192 248 / 0.14);
-    --color-secondary-text: var(--blue-300);
-    --color-on-secondary: var(--night-900);
-
-    --color-danger: var(--red-300);
-    --color-danger-shadow: var(--red-600);
-    --color-danger-soft: rgb(255 120 120 / 0.14);
-    --color-danger-text: var(--red-300);
-    --color-on-danger: var(--night-900);
-
-    --color-warning: var(--yellow-300);
-    --color-warning-shadow: var(--yellow-600);
-    --color-warning-soft: rgb(255 210 63 / 0.14);
-    --color-warning-text: var(--yellow-300);
-    --color-on-warning: var(--night-900);
-
-    --color-orange: var(--orange-300);
-    --color-orange-shadow: var(--orange-600);
-    --color-orange-soft: rgb(255 171 69 / 0.14);
-    --color-orange-text: var(--orange-300);
-
-    --color-purple: var(--purple-300);
-    --color-purple-shadow: var(--purple-600);
-    --color-purple-soft: rgb(217 164 255 / 0.14);
-    --color-purple-text: var(--purple-300);
-
-    --color-neutral-soft: var(--night-700);
-    --color-neutral-text: var(--night-300);
-
-    --color-focus: var(--blue-300);
-  }
 }
